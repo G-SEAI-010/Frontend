@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding School Anmeldeformular</title>
+  </head>
+  <body>
+    <!-- Header Bereich -->
+    <header>
+      <h1>Tritt unserer Coding School bei!</h1>
+      <p>Fülle unser Formular aus, um deine Programmier-Reise zu beginnen!</p>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main>
+      <section>
+        <form action="#">
+          <fieldset>
+            <!-- Persönliche Informationen Fieldset -->
+            <fieldset>
+              <legend><h3>Persönliche Informationen</h3></legend>
+
+              <!-- Vorname Input -->
+              <div>
+                <label for="firstname">Vorname: </label><br />
+                <input
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  placeholder="Max"
+                  required
+                />
+              </div>
+              <br />
+
+              <!-- Nachname Input -->
+              <div>
+                <label for="lastname">Nachname: </label><br />
+                <input
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  placeholder="Mustermann"
+                  required
+                />
+              </div>
+              <br />
+
+              <!-- E-Mail Input -->
+              <div>
+                <label for="email">E-Mail: </label><br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="max.muster@gmail.com"
+                  required
+                />
+              </div>
+              <br />
+
+              <!-- Telefon Input -->
+              <div>
+                <label for="phone">Telefon: </label><br />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="0123-456789"
+                  pattern="[0-9]{4}-[0-9]{6}"
+                  required
+                />
+                <small>Format: 0123-456789</small>
+              </div>
+            </fieldset>
+
+            <!--  Kurs-Informationen Fieldset -->
+            <fieldset>
+              <legend><h3>Kurs-Informationen</h3></legend>
+
+              <!-- Bootcamp-Auswahl Dropdown -->
+              <div>
+                <label for="bootcamp">Bootcamp auswählen:</label><br />
+                <select id="bootcamp" name="bootcamp" required>
+                  <option value="" disabled selected>
+                    --Bitte eine Option wählen--
+                  </option>
+                  <option value="SE-AI">Software Engineering & AI</option>
+                  <option value="data-science">Data Science</option>
+                  <option value="ux-design">UX/UI Design</option>
+                </select>
+              </div>
+              <br />
+
+              <!-- Kommentare Textarea für zusätzliche Informationen -->
+              <div>
+                <label for="comments">Zusätzliche Kommentare:</label><br />
+                <textarea
+                  id="comments"
+                  name="comments"
+                  rows="4"
+                  placeholder="Erzähle uns von deinen Zielen und was du erreichen möchtest"
+                ></textarea>
+              </div>
+            </fieldset>
+            <div>
+              <br />
+              <button type="submit">Bewerbung absenden</button>
+              <button type="reset">Daten zurücksetzen</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <!-- # Footer -->
+    <footer>
+      <p>© 2026 Coding School. Alle Rechte vorbehalten.</p>
+    </footer>
+  </body>
+</html>
