@@ -1,0 +1,59 @@
+/* External style */
+/* Selektor, Deklarationsblock, Eigenschaft & Wert */
+h3 {
+  color: green;
+}
+
+/* Specificity */
+/* Inline > Id > Class > Element */
+
+/* Selectors */
+
+/* Simple selector */
+p {
+  color: brown;
+}
+
+/* Combinator */
+div p {
+  color: violet;
+}
+
+/* Id */
+#paragraph-id {
+  color: gold;
+}
+
+/* Class */
+.generic-class {
+  color: crimson;
+}
+
+/* Combinator */
+p.generic-class {
+  font-size: 30px;
+}
+
+/* Pseudo-class */
+a:hover {
+  color: red;
+}
+
+/* Pseudo-elements */
+p::first-letter {
+  color: green;
+  font-size: 20px;
+}
+
+/* Attribute selector */
+input[type="text"] {
+  border: 2px solid blue;
+}
+
+/* Units */
+h1 {
+  font-size: 30px;
+  /* font-size: 1rem;
+  font-size: 1em;
+  font-size: 50%; */
+}
