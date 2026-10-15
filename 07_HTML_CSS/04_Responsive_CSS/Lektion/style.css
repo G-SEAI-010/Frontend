@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 10px 20px 30px 0px;
+  border: 5px solid;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  p {
+    font-size: 100%;
+    color: blue;
+    background-color: black;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  p {
+    font-size: 150%;
+    color: red;
+    background-color: white;
+  }
+}
+
+@media (min-width: 769px) {
+  p {
+    font-size: 200%;
+    color: green;
+    background-color: black;
+  }
+}
+
+/* Verschachteltes CSS / CSS-Nesting */
+
+/* div {
+      background-color: #f4f4f9;
+      border-radius: 10px;
+      padding: 20px;
+    
+      > p {
+        color: red;
+      }
+    
+      p:hover {
+        color: blue;
+      }
+    
+      .paragraphClass {
+        font-weight: bold;
+    
+        &:hover {
+          color: green;
+        }
+    
+        &::first-letter {
+          color: black;
+        }
+      }
+    } */
