@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* Funktioniert nicht mit Play CDN */
+@theme {
+  --color-dark: #333;
+  --color-light: #afafaf;
+}
+
+@layer base {
+  header,
+  footer {
+    @apply bg-dark;
+  }
+}
+
+@layer components {
+  .grid-item {
+    @apply bg-light p-8 text-center rounded-lg shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all;
+  }
+}
