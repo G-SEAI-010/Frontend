@@ -1,15 +1,20 @@
 /*==========================================================================
  * 1. ZUGRIFF AUF DAS DOCUMENT OBJECT
  *==========================================================================*/
+console.group("1. ZUGRIFF AUF DAS DOCUMENT OBJECT");
 // Das 'document' Objekt gibt uns Zugriff auf die gesamte HTML-Struktur
 
 console.dir(document); // Das gesamte document-Objekt
 console.dir(document.body); // Das body-Element
 console.dir(document.firstChild); // Das erste Kind-Element des Dokuments (meist DOCTYPE)
 
+console.groupEnd();
+
 /*==========================================================================
  * 2. ELEMENTE AUSWÄHLEN (SELECTING)
  *==========================================================================*/
+console.group("2. ELEMENTE AUSWÄHLEN (SELECTING)");
+
 // 2.1 Mit querySelector (gibt das ERSTE übereinstimmende Element zurück)
 console.dir(document.querySelector("body")); // Element-Selektor
 console.dir(document.querySelector("#outer-container")); // ID-Selektor
@@ -27,9 +32,12 @@ console.dir(document.getElementById("click-button"));
 const allDivs = document.querySelectorAll("div");
 console.log("Alle Divs:", allDivs);
 
+console.groupEnd();
+
 /*==========================================================================
  * 3. ELEMENTE IN VARIABLEN SPEICHERN
  *==========================================================================*/
+console.group("3. ELEMENTE IN VARIABLEN SPEICHERN");
 // Best Practice: Speichere Elemente, die du mehrfach nutzt, in Variablen
 
 const clickButton = document.getElementById("click-button");
@@ -38,9 +46,13 @@ const outerContainer = document.getElementById("outer-container");
 console.dir(clickButton);
 console.dir(outerContainer);
 
+console.groupEnd();
+
 /*==========================================================================
  * 4. ZUGRIFF AUF ELEMENTINHALTE
  *==========================================================================*/
+console.group("4. ZUGRIFF AUF ELEMENTINHALTE");
+
 const h1 = document.getElementById("main-heading");
 
 console.dir(h1);
@@ -48,9 +60,12 @@ console.dir(h1.innerText); // Nur der sichtbare Textinhalt (beachtet CSS-Styling
 console.dir(h1.textContent); // Der gesamte Textinhalt, unabhängig von der Sichtbarkeit
 console.dir(h1.innerHTML); // HTML-Inhalt inklusive Tags (Sicherheitsrisiko bei Nutzereingaben!)
 
+console.groupEnd();
+
 /*==========================================================================
  * 5. ELEMENTE VERÄNDERN
  *==========================================================================*/
+console.group("5. ELEMENTE VERÄNDERN");
 
 // 5.1 Textinhalt ändern
 h1.innerText = "DOM-Manipulation macht Spaß!";
@@ -100,9 +115,13 @@ console.dir(clickButton.getAttribute("id")); // Gibt "click-button" aus
 // 5.8 Elemente aus dem DOM entfernen
 // h1.remove(); // Auskommentiert, damit der restliche Code nicht abstürzt, da h1 fehlt
 
+console.groupEnd();
+
 /*==========================================================================
  * 6. ELEMENTE ERSTELLEN UND HINZUFÜGEN
  *==========================================================================*/
+console.group("6. ELEMENTE ERSTELLEN UND HINZUFÜGEN");
+
 // Ein neues Paragraph-Element (Absatz) erstellen
 const newParagraph = document.createElement("p");
 
@@ -114,9 +133,12 @@ newParagraph.id = "dynamic-paragraph";
 // Dem DOM hinzufügen
 outerContainer.appendChild(newParagraph);
 
+console.groupEnd();
+
 /*==========================================================================
  * 7. EVENT HANDLING (EREIGNISBEHANDLUNG)
  *==========================================================================*/
+console.group("7. EVENT HANDLING (EREIGNISBEHANDLUNG)");
 // Es gibt mehrere Wege, Event Listener hinzuzufügen:
 
 // Methode 1: addEventListener (bevorzugt - erlaubt mehrere Listener am selben Element)
@@ -130,6 +152,8 @@ clickButton.addEventListener("mouseout", () => {
 
 // Methode 2: onclick Eigenschaft (erlaubt nur EINEN Listener, überschreibt vorherige)
 clickButton.onclick = () => alert("Button geklickt!");
+
+console.groupEnd();
 
 /*==========================================================================
  * 8. WICHTIGE HINWEISE & BEST PRACTICES
