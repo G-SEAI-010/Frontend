@@ -1,5 +1,6 @@
 console.log('Display popup');
 
+// Variante 1: setTimeout führt die Funktion einmal nach 3000 ms aus
 // const messageContainer = document.getElementById('message-container');
 
 // setTimeout(() => {
@@ -16,6 +17,7 @@ console.log('Display popup');
 
 const messageContainer = document.getElementById('message-container');
 
+// Variante 2: Logik in eine benannte Funktion, Anzeige als Popover
 function addMessage() {
   const messageEl = document.createElement('div');
   messageEl.classList.add('bg-yellow-300', 'p-4', 'rounded-lg', 'text-center');
@@ -24,12 +26,14 @@ function addMessage() {
   messageContainer.appendChild(messageEl);
 
   // messageContainer.showModal();
-  messageContainer.showPopover(); // leicht wegklickbar - braucht 'popover' HTML_Attribut
+  messageContainer.showPopover(); // leicht wegklickbar - braucht 'popover' HTML-Attribut
 
+  // Zweiter Timer: blendet die Nachricht nach 17 s automatisch wieder aus
   setTimeout(() => {
     // messageContainer.close();
     messageContainer.hidePopover();
   }, 17000);
 }
 
+// Funktion nur übergeben (ohne ()) – setTimeout ruft sie später selbst auf
 setTimeout(addMessage, 3000);

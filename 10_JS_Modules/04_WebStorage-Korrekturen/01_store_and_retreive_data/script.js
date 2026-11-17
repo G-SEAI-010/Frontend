@@ -8,10 +8,13 @@ const ulEl = document.querySelector('ul');
 
 // Funktionen
 
+// localStorage speichert nur Strings → JSON.parse macht daraus wieder ein Array.
+// Gibt es den Key noch nicht, liefert getItem null – ?? setzt dann [] als Startwert
 function getFromLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key)) ?? [];
 }
 
+// JSON.stringify wandelt Array/Objekt in einen String um, damit localStorage ihn speichern kann
 function writeToLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
@@ -36,6 +39,7 @@ function handleSubmit(event) {
 
   //
 
+  // Lange Version ohne Hilfsfunktion:
   // let tasks = localStorage.getItem('tasks');
 
   // if (tasks === null) {
@@ -44,6 +48,7 @@ function handleSubmit(event) {
   //   tasks = JSON.parse(tasks);
   // }
 
+  // Ablauf: lesen → im Array ändern → komplett zurückschreiben (localStorage kann nichts "anhängen")
   let tasks = getFromLocalStorage('tasks');
 
   tasks.push(userInput);
@@ -53,6 +58,7 @@ function handleSubmit(event) {
   renderTodo(userInput);
 }
 
+// Beim Laden der Seite die gespeicherten Tasks anzeigen – so überleben sie einen Reload
 function renderStorage() {
   const tasks = getFromLocalStorage('tasks');
   tasks.forEach((t) => renderTodo(t));
