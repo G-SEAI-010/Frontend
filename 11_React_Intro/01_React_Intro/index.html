@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Favicon als Inline-SVG mit einem Emoji – so braucht man keine eigene Bilddatei -->
+    <link rel='icon'
+      href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>'>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>React Intro</title>
+  </head>
+
+  <body>
+    <!-- Das ist die einzige "echte" HTML-Stelle für unsere App.
+         Dieses leere div ist der Container, in den React später alles hineinrendert (siehe main.jsx). -->
+    <div id="root"></div>
+
+    <!-- Hier startet unsere React-App. type="module" erlaubt import/export.
+         Vite übersetzt die .jsx-Datei im Hintergrund in normales JavaScript, das der Browser versteht. -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+
+</html>
