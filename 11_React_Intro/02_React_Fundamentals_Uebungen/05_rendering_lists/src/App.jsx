@@ -1,15 +1,6 @@
+import Student from './components/Student.jsx';
+
 const students = [
-  {
-    id: 1,
-    firstName: 'Testy',
-    lastName: 'McTest',
-    age: 42,
-    course: 'Web Development',
-    city: 'Berlin',
-    picture: 'https://randomuser.me/api/portraits/men/1.jpg',
-    gpa: 50,
-    graduate: false,
-  },
   {
     id: 2,
     firstName: 'Jane',
@@ -114,7 +105,12 @@ const students = [
 function App() {
   return (
     <>
-      <h1>Rendering Lists</h1>
+      <h1>Displaying Data</h1>
+      <main style={{ display: 'flex' }}>
+        {students.map((studentObj) => (
+          <Student key={studentObj.id} infos={studentObj} />
+        ))}
+      </main>
     </>
   );
 }

@@ -1,13 +1,15 @@
+import Student from './components/Student.jsx';
+
 const studentData = {
   id: 1,
-  firstName: 'Edward',
+  firstName: 'Tom',
   lastName: 'McTest',
-  age: 42,
+  age: 40,
   course: 'Web Development',
   city: 'Berlin',
   picture: 'https://randomuser.me/api/portraits/men/1.jpg',
+  gpa: 60,
   graduate: false,
-  gpa: 87,
 };
 const studentData2 = {
   id: 2,
@@ -15,16 +17,22 @@ const studentData2 = {
   lastName: 'McTest',
   age: 42,
   course: 'Softwareentwicklung',
-  city: 'Berlin',
+  city: 'Rostock',
   picture: 'https://randomuser.me/api/portraits/men/2.jpg',
+  gpa: 95,
   graduate: true,
-  gpa: 50,
 };
 
 function App() {
   return (
     <>
-      <h1>Conditional Rendering</h1>
+      <h1>Displaying Data</h1>
+      <main style={{ display: 'flex' }}>
+        <Student infos={studentData} />
+        <Student infos={studentData2} />
+        {/* <Student /> */}
+        {/* <Student /> */}
+      </main>
     </>
   );
 }
