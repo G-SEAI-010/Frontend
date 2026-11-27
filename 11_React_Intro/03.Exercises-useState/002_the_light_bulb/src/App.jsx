@@ -1,41 +1,39 @@
+import { useState } from 'react';
+
+import LightBulb from './components/LightBulb';
+
 import './index.css';
 
-const LightBulb = () => {
-  return (
-    <div className='container'>
-      <div className='bulb-light'>
-        <div id='light' />
-        <div id='bulb'>
-          <div className='bulb-top'>
-            <div className='reflection' />
-          </div>
-          <div className='bulb-middle-1' />
-          <div className='bulb-middle-2' />
-          <div className='bulb-middle-3' />
-          <div className='bulb-bottom' />
-        </div>
-
-        <div id='base'>
-          <div className='screw-top' />
-          <div className='screw-a' />
-          <div className='screw-b' />
-          <div className='screw-a' />
-          <div className='screw-b' />
-          <div className='screw-a' />
-          <div className='screw-b' />
-          <div className='screw-c' />
-          <div className='screw-d' />
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const App = () => {
+  const [lightSwitch, setLightSwitch] = useState(false);
+  const [counter, setCounter] = useState(0);
+
+  function handleClick() {
+    if (counter < 10) {
+      setLightSwitch((l) => !l); // typischer boolean-Toggle
+    }
+
+    // if (lightSwitch) {
+    //   setCounter((c) => c + 1);
+    // }
+    setCounter((c) => (lightSwitch ? c + 1 : c));
+
+    console.log(counter);
+
+    // ! 1) direct state update → alten State vollstandig überschreiben mit neuem State
+    // ! 2) functional state update → vorheriger Wert/State ist relevant
+    // setLightSwitch((l) => (l === false ? true : false));
+  }
+
   return (
     <>
-      <button>Switch</button>
-      <LightBulb />
+      <button onClick={handleClick} disabled={counter >= 10}>
+        {lightSwitch ? 'Switch off' : 'Switch on'}
+      </button>
+      <button onClick={() => setCounter(0)} disabled={counter < 10}>
+        Reset
+      </button>
+      <LightBulb lightSwitch={lightSwitch} />
     </>
   );
 };
